@@ -60,7 +60,33 @@ insert into guest(guestname, locationid, phonenumber)
     ('Maritza Tilton', (SELECT locationid from location where address = '939 Linda Rd.'), '(446) 351-6860'),
 	('Joleen Tison', (SELECT locationid from location where address = '87 Queen St.'), '(231) 893-2755');
 
-select * from guest;
+insert into reservation (guestid, startdate, enddate)
+	values ((select guestid from guest where guestname = 'Mack Simmer'), '2023-02-02', '2023-02-04'),
+    ((select guestid from guest where guestname = 'Bettyann Seery'), '2023-02-05', '2023-02-10'),
+    ((select guestid from guest where guestname = 'Duane Collison'), '2023-02-22', '2023-02-24'),
+    ((select guestid from guest where guestname = 'Karie Yang'), '2023-03-06', '2023-03-07'),
+    ((select guestid from guest where guestname = 'Andrew Larson'), '2023-03-17', '2023-03-20'),
+    ((select guestid from guest where guestname = 'Aurore Lipton'), '2023-03-18', '2023-03-23'),
+    ((select guestid from guest where guestname = 'Zachery Luechtefeld'), '2023-03-29', '2023-03-31'),
+    ((select guestid from guest where guestname = '	Jeremiah Pendergrass'), '2023-03-31', '2023-04-05'),
+    ((select guestid from guest where guestname = '	Walter Holaway'), '2023-04-09', '2023-04-13'),
+    ((select guestid from guest where guestname = 'Wilfred Vise'), '2023-04-23', '2023-04-24'),
+    ((select guestid from guest where guestname = 'Maritza Tilton'), '2023-05-30', '2023-06-02'),
+    ((select guestid from guest where guestname = 'Joleen Tison'), '2023-06-10', '2023-06-14'),
+    ((select guestid from guest where guestname = 'Joleen Tison'), '2023-06-10', '2023-06-14'),
+    ((select guestid from guest where guestname = 'Aurore Lipton'), '2023-06-17', '2023-06-18'),
+    ((select guestid from guest where guestname = 'Andrew Larson'), '2023-06-28', '2023-07-02'),
+    ((select guestid from guest where guestname = 'Walter Holaway'), '2023-07-13', '2023-07-14'),
+    ((select guestid from guest where guestname = 'Wilfred Vise'), '2023-07-18', '2023-07-21'),
+    ((select guestid from guest where guestname = 'Bettyann Seery'), '2023-07-28', '2023-07-29'),
+    ((select guestid from guest where guestname = 'Bettyann Seery'), '2023-08-30', '2023-09-01'),
+    ((select guestid from guest where guestname = 'Mack Simmer'), '2023-09-16', '2023-09-17'),
+    ((select guestid from guest where guestname = 'Karie Yang'), '2023-09-13', '2023-09-15'),
+    ((select guestid from guest where guestname = 'Duane Cullison'), '2023-11-22', '2023-11-25'),
+    ((select guestid from guest where guestname = 'Mack Simmer'), '2023-11-22', '2023-11-25'),
+    ((select guestid from guest where guestname = 'Mack Simmer'), '2023-11-22', '2023-11-25'),
+	((select guestid from guest where guestname = 'Maritza Tilton'), '2023-12-24', '2023-12-28');
+
 
 -- Mack Simmer	379 Old Shore Street	Council Bluffs	IA	51501	(291) 553-0508
 -- Bettyann Seery	750 Wintergreen Dr.	Wasilla	AK	99654	(478) 277-9632
