@@ -19,7 +19,7 @@ CREATE TABLE ROOMTYPE (
 );
 
 CREATE TABLE ROOM (
-    roomnumber CHAR(50) PRIMARY KEY,
+    roomnumber INT PRIMARY KEY,
     isADA BOOL NOT NULL DEFAULT 0,
     roomtypeid INT NOT NULL,
     FOREIGN KEY fk_room_roomtype (roomtypeid)
@@ -33,7 +33,7 @@ CREATE TABLE AMENITIES (
 );
 
 CREATE TABLE ROOMAMENITIES (
-    roomnumber VARCHAR(50) NOT NULL,
+    roomnumber INT NOT NULL,
     amenityid INT NOT NULL,
     PRIMARY KEY pk_roomamenities (roomnumber , amenityid),
     FOREIGN KEY fk_roomamenities_room (roomnumber)
@@ -60,9 +60,9 @@ CREATE TABLE RESERVATION (
         REFERENCES guest (guestid)
 );
 
-CREATE TABLE RESERVATIONROOM (
+CREATE TABLE ROOMRESERVATION (
     reservationid INT NOT NULL,
-    roomnumber VARCHAR(50) NOT NULL,
+    roomnumber INT NOT NULL,
     numberofadults INT NOT NULL,
     numberofchildren INT NOT NULL,
     startdate DATE NOT NULL,
