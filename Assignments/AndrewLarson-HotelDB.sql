@@ -54,6 +54,8 @@ CREATE TABLE GUEST (
 CREATE TABLE RESERVATION (
     reservationid INT PRIMARY KEY AUTO_INCREMENT,
     guestid INT NOT NULL,
+    startdate DATE NOT NULL,
+    enddate DATE NOT NULL,
     FOREIGN KEY fk_reservation_guest (guestid)
         REFERENCES guest (guestid)
 );
