@@ -68,6 +68,8 @@ CREATE TABLE ROOMRESERVATION (
     startdate DATE NOT NULL,
     enddate DATE NOT NULL,
     baseroomprice DECIMAL NOT NULL,
+    baseroomaddition DECIMAL NOT NULL,
+    extrapeople INT NOT NULL,
     PRIMARY KEY pk_reservationroom (reservationid , roomnumber),
     FOREIGN KEY fk_rr_reservation (reservationid)
         REFERENCES reservation (reservationid),
