@@ -19,6 +19,17 @@ having r.startdate between '2023-07-01' and '2023-07-31';
 
 -- 2. query that returns a list of all reservations for rooms with a jacuzzi, 
 -- displaying the guest's name, the room number, and the dates of the reservation.
+SELECT
+	(select guestname from guest where guestid = r.guestid) GuestName,
+    rr.roomnumber RoomNumber,
+    rr.startdate StartDate,
+    rr.enddate EndDate
+from roomreservation rr
+inner join roomamenities ra on rr.roomnumber = ra.roomnumber
+inner join room r on ra.roomnumber = r.roomnumber
+inner join reservation res on res.reservationid = rr.reservationid
+GROUP BY GuestName, RoomNumber, StartDate, EndDate
+HAVING(ra.roomnumber = 1); -- 1 is the id for jacuzzi
 
 -- 3. query that returns all the rooms reserved for a specific guest, including the guest's name, the room(s) reserved, 
 -- the starting date of the reservation, and how many people were included in the reservation
