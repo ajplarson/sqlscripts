@@ -26,6 +26,7 @@ CREATE TABLE ROOM (
         REFERENCES roomtype(roomtypeid)
 );
 
+
 CREATE TABLE AMENITIES (
     amenityid INT PRIMARY KEY AUTO_INCREMENT,
     amenityname VARCHAR(50),
@@ -44,7 +45,8 @@ CREATE TABLE ROOMAMENITIES (
 
 CREATE TABLE GUEST (
     guestid INT PRIMARY KEY AUTO_INCREMENT,
-    guestname VARCHAR(50) NULL,
+    firstname VARCHAR(50) NULL,
+    lastname VARCHAR(50) NULL,
     locationid INT NOT NULL,
     phonenumber VARCHAR(20) NOT NULL,
     FOREIGN KEY fk_guest_location (locationid)

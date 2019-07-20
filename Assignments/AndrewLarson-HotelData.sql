@@ -72,19 +72,19 @@ insert into location(address, city, state, zipcode)
     ('87 Queen St.', 'Drexel Hill',	'PA', '19026'),
     ('123 Main St.', 'Edina', 'MN', '55436');
 
-insert into guest(guestname, locationid, phonenumber)
-	VALUES ('Mack Simmer', (SELECT locationid from location where address = '379 Old Shore Street'), '(291) 553-0508'), -- 1
-    ('Bettyann Seery', (SELECT locationid from location where address = '750 Wintergreen Dr.'), '(478) 277-9632'), -- 2 
-    ('Duane Cullison', (SELECT locationid from location where address = '9662 Foxrun Lane'), '(308) 494-0198'), -- 3 
-    ('Karie Yang', (SELECT locationid from location where address = '9378 W. Augusta Ave.'), '(214) 730-0298'), -- 4 
-    ('Aurore Lipton', (SELECT locationid from location where address = '762 Wild Rose Street'), '(377) 507-0974'), -- 5
-    ('Zachery Luechtefeld', (SELECT locationid from location where address = '7 Poplar Dr.'), '(814) 485-2615'), -- 6 
-    ('Jeremiah Pendergrass', (SELECT locationid from location where address = '70 Oakwood St.'), '(279) 491-0960'), -- 7 
-    ('Walter Holaway', (SELECT locationid from location where address = '7556 Arrowhead St.'), '(446) 396-6785'), -- 8 
-    ('Wilfred Vise', (SELECT locationid from location where address = '77 West Surrey Street'), '(834) 727-1001'), -- 9 
-    ('Maritza Tilton', (SELECT locationid from location where address = '939 Linda Rd.'), '(446) 351-6860'), -- 10
-    ('Andrew Larson', (SELECT locationid from location where address = '123 Main St.'), '(952) 351-6860'), -- 11 
-	('Joleen Tison', (SELECT locationid from location where address = '87 Queen St.'), '(231) 893-2755'); -- 12
+insert into guest(firstname, lastname, locationid, phonenumber)
+	VALUES ('Mack', 'Simmer', (SELECT locationid from location where address = '379 Old Shore Street'), '(291) 553-0508'), -- 1
+    ('Bettyann', 'Seery', (SELECT locationid from location where address = '750 Wintergreen Dr.'), '(478) 277-9632'), -- 2 
+    ('Duane', 'Cullison', (SELECT locationid from location where address = '9662 Foxrun Lane'), '(308) 494-0198'), -- 3 
+    ('Karie', 'Yang', (SELECT locationid from location where address = '9378 W. Augusta Ave.'), '(214) 730-0298'), -- 4 
+    ('Aurore', 'Lipton', (SELECT locationid from location where address = '762 Wild Rose Street'), '(377) 507-0974'), -- 5
+    ('Zachery', 'Luechtefeld', (SELECT locationid from location where address = '7 Poplar Dr.'), '(814) 485-2615'), -- 6 
+    ('Jeremiah', 'Pendergrass', (SELECT locationid from location where address = '70 Oakwood St.'), '(279) 491-0960'), -- 7 
+    ('Walter', 'Holaway', (SELECT locationid from location where address = '7556 Arrowhead St.'), '(446) 396-6785'), -- 8 
+    ('Wilfred', 'Vise', (SELECT locationid from location where address = '77 West Surrey Street'), '(834) 727-1001'), -- 9 
+    ('Maritza', 'Tilton', (SELECT locationid from location where address = '939 Linda Rd.'), '(446) 351-6860'), -- 10
+    ('Andrew', 'Larson', (SELECT locationid from location where address = '123 Main St.'), '(952) 351-6860'), -- 11 
+	('Joleen', 'Tison', (SELECT locationid from location where address = '87 Queen St.'), '(231) 893-2755'); -- 12
 
 insert into reservation (guestid, startdate, enddate)
 	values (1, '2023-02-02', '2023-02-04'), -- 1
@@ -152,15 +152,15 @@ insert into roomreservation (reservationid, roomnumber, numberofadults,
     
 	DELETE FROM roomreservation
     WHERE 
-    reservationid = 8;
+    reservationid = 8; -- jeremiah's
     
     DELETE FROM reservation
     WHERE
-    guestid = (SELECT guestid FROM guest where guestname = 'Jeremiah Pendergrass');
+    guestid = 7; -- jeremiah's id
     
     DELETE FROM guest
 	WHERE
-    guestname = 'Jeremiah Pendergrass';
+    guestid = 7;
     
     DELETE FROM Location
     WHERE
