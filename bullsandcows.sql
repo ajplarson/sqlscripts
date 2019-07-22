@@ -21,4 +21,8 @@ CREATE TABLE round (
 
 select * from round r having r.gameid = 2;
 
+delete from round where gameid = 2;
+
+select * from round r having r.gameid = 2;
+
 
