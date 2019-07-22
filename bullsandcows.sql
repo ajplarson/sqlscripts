@@ -29,42 +29,42 @@ CREATE TABLE round (
 
 
 
-INSERT INTO guess (numbers) VALUES
-(1234),
-(1325),
-(7345),
-(5746);
+-- INSERT INTO guess (numbers) VALUES
+-- (1234),
+-- (1325),
+-- (7345),
+-- (5746);
 
-INSERT INTO game (winningnumbers, numberofrounds) VALUES
-(1234, 4),
-(1423, 5),
-(2034, 3);
--- 	   roundid INT PRIMARY KEY,
---     exact INT NOT NULL,
---     partial INT NOT NULL,
---     guessid INT NOT NULL,
---     time TIMESTAMP NOT NULL,-- 
-INSERT INTO round(exact, partial, guessid, time, gameid) VALUES
-(2, 0, 1, '2000-01-24 03:04:01', 1),
-(1, 0, 1, '2000-01-25 03:04:01', 1),
-(3, 0, 2, '2000-01-26 03:04:01', 2),
-(1, 0, 2, '2000-01-27 03:04:01', 2),
-(2, 0, 1, '2000-01-28 03:04:01', 3);
+-- INSERT INTO game (winningnumbers, numberofrounds) VALUES
+-- (1234, 4),
+-- (1423, 5),
+-- (2034, 3);
+-- -- 	   roundid INT PRIMARY KEY,
+-- --     exact INT NOT NULL,
+-- --     partial INT NOT NULL,
+-- --     guessid INT NOT NULL,
+-- --     time TIMESTAMP NOT NULL,-- 
+-- INSERT INTO round(exact, partial, guessid, time, gameid) VALUES
+-- (2, 0, 1, '2000-01-24 03:04:01', 1),
+-- (1, 0, 1, '2000-01-25 03:04:01', 1),
+-- (3, 0, 2, '2000-01-26 03:04:01', 2),
+-- (1, 0, 2, '2000-01-27 03:04:01', 2),
+-- (2, 0, 1, '2000-01-28 03:04:01', 3);
 
-select * 
+-- select * 
 
-from game g 
-inner join round r on r.gameid = g.gameid 
-inner join guess gu on r.guessid = gu.guessid
-group by r.roundid
-having r.gameid = 1
-order by r.time;
+-- from game g 
+-- inner join round r on r.gameid = g.gameid 
+-- inner join guess gu on r.guessid = gu.guessid
+-- group by r.roundid
+-- having r.gameid = 1
+-- order by r.time;
 
-select * 
+-- select * 
 
-from game g 
-inner join round r on r.gameid = g.gameid 
-inner join guess gu on r.guessid = gu.guessid
-group by r.roundid
-order by r.time;
+-- from game g 
+-- inner join round r on r.gameid = g.gameid 
+-- inner join guess gu on r.guessid = gu.guessid
+-- group by g.gameid
+-- having g.gameid = 1;
 
