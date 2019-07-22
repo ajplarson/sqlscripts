@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS bullsandcows;
-CREATE DATABASE bullsandcows;
-USE bullsandcows;
+DROP DATABASE IF EXISTS bullsandcowstest;
+CREATE DATABASE bullsandcowstest;
+USE bullsandcowstest;
 
 CREATE TABLE game (
 	gameid INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,8 +17,3 @@ CREATE TABLE round (
 	 FOREIGN KEY fk_round_game (gameid)
         REFERENCES game(gameid)
 );
-
-
-select * from round r having r.gameid = 2;
-
-
