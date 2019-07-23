@@ -14,6 +14,6 @@ CREATE TABLE round (
     partial INT NOT NULL,
     time TIMESTAMP NOT NULL,
     gameid INT NOT NULL,
-	 FOREIGN KEY fk_round_game (gameid)
+	FOREIGN KEY fk_round_game (gameid)
         REFERENCES game(gameid)
 );
